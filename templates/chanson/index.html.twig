@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{# Vue de toute les chansons qui ont été ajoutées on doit ajouter les chansons pour voir la liste donc elle redirige vers le form ajouter chanson #}
+
+{% block title %}Toutes les chansons!{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1>Liste des chansons</h1>
+
+    <ul>
+    {% for chanson in chansons %}
+        <li><a href="{{ path('afficher_chanson', {id : chanson.id}) }}">{{ chanson.titre }}</a></li>
+
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}

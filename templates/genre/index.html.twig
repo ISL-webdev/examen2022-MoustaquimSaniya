@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{# Vue de tous les genres qui ont été ajoutés on doit ajouter les genres pour voir la liste donc elle redirige vers le form ajouter genre #}
+
+{% block title %}Tous les genres!{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1>Liste des genres</h1>
+
+        <ul>
+            {% for genre in genres %}
+                <li>{{ genre.nom }} : {{ genre.description }} - <a href="{{ path('modifier_genre', {id : genre.id}) }}">Modifier</a></li>
+
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

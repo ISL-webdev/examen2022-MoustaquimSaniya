@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{# modification de genre, nouvelle vue afin de ne pas afficher "ajouter genre" en titre #}
+
+{% block title %}Modifier le genre{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1>Modifier le genre : {{ genre.id }}</h1>
+
+        {{ form_start(form) }}
+        {{ form_end(form) }}
+
+
+    </div>
+{% endblock %}
